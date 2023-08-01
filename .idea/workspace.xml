@@ -4,25 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff1f9472-87b9-4188-8be4-6f9744e2104b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heroes/Archer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heroes/Barbarian.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heroes/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heroes/HeroAttribute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heroes/Swashbuckler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heroes/Wizard.java" afterDir="false" />
+    <list default="true" id="ff1f9472-87b9-4188-8be4-6f9744e2104b" name="Changes" comment="Inital commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heroes/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heroes/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heroes/Barbarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heroes/Barbarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heroes/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heroes/Swashbuckler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heroes/Swashbuckler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heroes/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heroes/Wizard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +80,19 @@
       <option name="presentableId" value="Default" />
       <updated>1690805748395</updated>
     </task>
+    <task id="LOCAL-00001" summary="Inital commit">
+      <option name="closed" value="true" />
+      <created>1690900055365</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690900055365</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Inital commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inital commit" />
   </component>
 </project>

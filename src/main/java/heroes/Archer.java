@@ -1,6 +1,5 @@
 package heroes;
 public class Archer  extends Hero {
-    private final String type = "Archer";
     private static final HeroAttribute BASE_ATTRIBUTE = new HeroAttribute(1, 7, 1);
     private static final HeroAttribute LEVEL_UP_ATTRIBUTE = new HeroAttribute(1, 5, 1);
     //private int strength = 1;
@@ -19,6 +18,7 @@ public class Archer  extends Hero {
 
     @Override
     public String toString() {
+        String type = "Archer";
         return super.toString() + "  " + "Class: " + type + " Level attributes: " + attributes(this);
     }
 

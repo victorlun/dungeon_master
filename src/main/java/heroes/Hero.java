@@ -3,7 +3,7 @@ package heroes;
 import java.util.ArrayList;
 
 public class Hero {
-    private String name;
+    private final String name;
     public int level = 1;
 
     protected HeroAttribute levelAttributes;

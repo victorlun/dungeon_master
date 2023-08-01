@@ -1,7 +1,6 @@
 package heroes;
 
 public class Swashbuckler extends Hero {
-    private final String type = "Swashbuckler";
     private static final HeroAttribute BASE_ATTRIBUTE = new HeroAttribute(2, 6, 1);
     private static final HeroAttribute LEVEL_UP_ATTRIBUTE = new HeroAttribute(1, 4, 1);
 
@@ -21,6 +20,7 @@ public class Swashbuckler extends Hero {
 
     @Override
     public String toString() {
+        String type = "Swashbuckler";
         return super.toString() + "  " + "Class: " + type + "  " + "Level attributes: " + attributes(this);
     }
 }
