@@ -12,15 +12,10 @@ public class Swashbuckler extends Hero {
     @Override
     public void levelUp() {
         this.level++;
-
-
         this.levelAttributes = this.levelAttributes.add(LEVEL_UP_ATTRIBUTE);
-
     }
-
     @Override
     public String toString() {
-        String type = "Swashbuckler";
-        return super.toString() + "  " + "Class: " + type + "  " + "Level attributes: " + attributes(this);
+        return "{Swashbuckler} " + super.toString() + "  " +  " [Attributes]: " + attributes(this);
     }
 }

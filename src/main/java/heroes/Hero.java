@@ -1,14 +1,12 @@
 package heroes;
+import items.*;
+import java.util.*;
 
-import java.util.ArrayList;
-
-public class Hero {
+public abstract class Hero {
     private final String name;
     public int level = 1;
-
     protected HeroAttribute levelAttributes;
-    //public ArrayList<Integer> levelAttributes = new ArrayList<Integer>();
-    private ArrayList<String> equipment = new ArrayList<String>();
+    private Map<Slot, Item> equipment = new HashMap<Slot, Item>();
     private ArrayList<String> validWeaponTypes = new ArrayList<String>();
     private ArrayList<String> validArmorTypes = new ArrayList<String>();
 
@@ -16,13 +14,12 @@ public class Hero {
         this.name = name;
         this.levelAttributes = levelAttributes;
     }
-    public void levelUp(){
+    public abstract void levelUp();
+    public void equipWeapon(Weapon weapon){
+        equipment.put(Slot.Weapon ,weapon);
     }
-    public void equipWeapon(String nameOfWeapon){
-        equipment.add(nameOfWeapon);
-    }
-    public void equipArmor(String nameOfArmor){
-        equipment.add(nameOfArmor);
+    public void equipArmor(Slot slot, Armor armor){
+        equipment.put(slot, armor);
     }
     public int calculateDamage (Hero hero){
         return this.level * 5;
@@ -33,9 +30,8 @@ public class Hero {
     public String getName(){
         return this.name;
     }
-
     @Override
     public String toString() {
-        return "Name: " + this.name;
+        return "[Name]: " + this.name;
     }
 }

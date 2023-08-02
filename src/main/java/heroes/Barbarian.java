@@ -12,7 +12,6 @@ public class Barbarian  extends Hero {
     }
     @Override
     public String toString() {
-        String type = "Barbarian";
-        return super.toString() + "  " + "Class: " + type + "  "+ "Level attributes: " + attributes(this);
+        return "{Barbarian} "+ super.toString() +  " [Attributes]: " + attributes(this);
     }
 }
