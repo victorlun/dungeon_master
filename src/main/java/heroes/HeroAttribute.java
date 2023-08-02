@@ -20,6 +20,6 @@ public class HeroAttribute {
 
     @Override
     public String toString() {
-        return "Strength: " + this.strength + " Dexterity: " + this.dexterity + " Intelligence: " + this.intelligence;
+        return "Str:" + this.strength + " Dex:" + this.dexterity + " Int:" + this.intelligence;
     }
 }
