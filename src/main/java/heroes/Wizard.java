@@ -10,12 +10,11 @@ public class Wizard extends Hero {
 
     @Override
     public void levelUp() {
-        this.level++;
+        setLevel(getLevel() +1 );
         this.levelAttributes = this.levelAttributes.add(LEVEL_UP_ATTRIBUTE);
     }
     @Override
     public String toString() {
-        String type = "Wizard";
-        return "{Wizard} " + super.toString() + " Level attributes: " + attributes(this);
+        return "{Wizard} " + super.toString() + " Level attributes: " + attributes(this) + "\n    Equipment: " + equipment.toString();
     }
 }

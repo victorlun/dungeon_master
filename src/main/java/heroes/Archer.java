@@ -7,7 +7,7 @@ public class Archer  extends Hero {
     }
     @Override
     public void levelUp() {
-        this.level++;
+        setLevel(getLevel() +1 );
         this.levelAttributes = this.levelAttributes.add(LEVEL_UP_ATTRIBUTE);
     }
     @Override
