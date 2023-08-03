@@ -15,19 +15,21 @@ public abstract class Hero {
         this.levelAttributes = levelAttributes;
     }
     public abstract void levelUp();
-    public void equipWeapon(Weapon weapon) {
-        if (this.level >= weapon.getRequiredLevel()) {
+    public void equipWeapon(Weapon weapon) throws IllegalArgumentException {
+        if(weapon.getRequiredLevel() > level){
+            throw new IllegalArgumentException("You are not high enough level for this weapon.");
+        }else{
             equipment.put(Slot.Weapon, weapon);
-        } else {
-            System.out.println("  You can't equip that weapon yet!" +  System.lineSeparator()+ "  You need to be atleast lvl " + weapon.getRequiredLevel());
         }
+
+
+
     }
     public void equipArmor(Slot slot, Armor armor){
-        if(this.level >= armor.getRequiredLevel()){
-            equipment.put(slot, armor);
-        }
-        else{
-            System.out.println("You can't equip that armor yet! \n You need to be atleast lvl" + armor.getRequiredLevel());
+        if(armor.getRequiredLevel() > level){
+            throw new IllegalArgumentException("You are not high enough level for this weapon.");
+        }else{
+            equipment.put(Slot.Weapon, armor);
         }
     }
     public int calculateDamage (Hero hero){
@@ -36,8 +38,20 @@ public abstract class Hero {
     public HeroAttribute attributes(Hero hero){
         return this.levelAttributes;
     }
-    public HeroAttribute totalAttribute(Hero hero){
-        return this.levelAttributes; //+ equippedArmorAttribute
+    public HeroAttribute totalAttribute() {
+        HeroAttribute totalAttributes = new HeroAttribute(this.levelAttributes.getStrength(), this.levelAttributes.getDexterity(), this.levelAttributes.getIntelligence());
+
+        for (Map.Entry<Slot, Item> entry : equipment.entrySet()) {
+            Item item = entry.getValue();
+
+            // You need to make sure all items (Weapon, Armor) have a method to return their attributes
+            if (item instanceof Weapon) {
+               // totalAttributes.add(((Weapon)item).getName());
+            } else if (item instanceof Armor) {
+                totalAttributes.add(((Armor)item).getArmorAttribute());
+            }
+        }
+        return totalAttributes;
     }
     public String getName(){
         return this.name;

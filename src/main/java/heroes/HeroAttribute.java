@@ -15,9 +15,9 @@ public class HeroAttribute {
 
     public HeroAttribute add(HeroAttribute heroAttribute) {
         return new HeroAttribute(
-                this.strength + heroAttribute.strength,
-                this.dexterity + heroAttribute.dexterity,
-                this.intelligence + heroAttribute.intelligence
+                this.strength += heroAttribute.strength,
+                this.dexterity += heroAttribute.dexterity,
+                this.intelligence += heroAttribute.intelligence
         );
     }
 
