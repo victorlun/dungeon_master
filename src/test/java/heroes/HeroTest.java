@@ -1,5 +1,8 @@
 package heroes;
 
+import items.Armor;
+import items.ArmorType;
+import items.Slot;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -91,5 +94,19 @@ class HeroTest {
         wizard.levelUp();
         assertEquals(new HeroAttribute(4,4,23 ), wizard.attributes(wizard));
     }
+    @Test
+    public void heroTotalAttributeTest(){
+        Wizard wizard = new Wizard("Rudbeckius");
+        wizard.levelUp();
+        Armor aLovelyPinkDress = new Armor("A lovely pink dress", 2, Slot.Body, ArmorType.Cloth, new HeroAttribute(0, 0, 5));
+        Armor aShattredMonocole = new Armor("A shattred Monocle", 0 ,Slot.Head, ArmorType.Cloth, new HeroAttribute(1,1,1));
+        wizard.equipArmor(Slot.Body, aLovelyPinkDress);
+        wizard.equipArmor(Slot.Head, aShattredMonocole);
+
+        assertEquals(new HeroAttribute(3,3,19), wizard.totalAttribute());
+
+
+    }
 }
+
 
