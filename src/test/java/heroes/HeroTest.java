@@ -3,7 +3,10 @@ package heroes;
 import items.Armor;
 import items.ArmorType;
 import items.Slot;
+import items.WeaponType;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,7 +23,6 @@ class HeroTest {
         archer.levelUp();
         archer.levelUp();
         archer.levelUp();
-
         assertEquals(4, archer.getLevel());
     }
     @Test
@@ -97,16 +99,20 @@ class HeroTest {
     @Test
     public void heroTotalAttributeTest(){
         Wizard wizard = new Wizard("Rudbeckius");
-        wizard.levelUp();
-        Armor aLovelyPinkDress = new Armor("A lovely pink dress", 2, Slot.Body, ArmorType.Cloth, new HeroAttribute(0, 0, 5));
-        Armor aShattredMonocole = new Armor("A shattred Monocle", 0 ,Slot.Head, ArmorType.Cloth, new HeroAttribute(1,1,1));
+
+        Armor aLovelyPinkDress = new Armor("A lovely pink dress", 1, Slot.Body, ArmorType.Cloth, new HeroAttribute(0, 0, 5));
+        Armor aShattredMonocole = new Armor("A shattred Monocle", 1, Slot.Head, ArmorType.Cloth, new HeroAttribute(1,1,1));
         wizard.equipArmor(Slot.Body, aLovelyPinkDress);
         wizard.equipArmor(Slot.Head, aShattredMonocole);
 
-        assertEquals(new HeroAttribute(3,3,19), wizard.totalAttribute());
-
-
+        assertEquals(new HeroAttribute(2,2,14), wizard.totalAttribute());
     }
+    @Test
+    public void testValidWeaponTypes() {
+        Wizard wizard = new Wizard("Rudbeckius");
+        assertEquals(Arrays.asList(WeaponType.Staff, WeaponType.Wand), wizard.getValidWeaponTypes());
+    }
+
 }
 
 

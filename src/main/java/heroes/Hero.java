@@ -7,7 +7,7 @@ public abstract class Hero {
     private int level = 1;
     public HeroAttribute levelAttributes;
     public Map<Slot, Item> equipment = new HashMap<Slot, Item>();
-    private List<WeaponType> validWeaponTypes = new ArrayList<>(Arrays.asList(WeaponType.values()));
+    public List<WeaponType> validWeaponTypes = new ArrayList<>();
     public ArrayList<String> validArmorTypes = new ArrayList<String>();
 
     public Hero (String name, HeroAttribute levelAttributes){
@@ -18,18 +18,20 @@ public abstract class Hero {
     public void equipWeapon(Weapon weapon) throws IllegalArgumentException {
         if(weapon.getRequiredLevel() > level){
             throw new IllegalArgumentException("You are not high enough level for this weapon.");
-        }else{
+        }
+        if(!validWeaponTypes.contains(weapon.getType())){
+            throw new IllegalArgumentException("You can't use this weapon type.");
+        }
+        else{
             equipment.put(Slot.Weapon, weapon);
         }
-
-
-
     }
     public void equipArmor(Slot slot, Armor armor){
         if(armor.getRequiredLevel() > level){
-            throw new IllegalArgumentException("You are not high enough level for this weapon.");
-        }else{
-            equipment.put(Slot.Weapon, armor);
+            throw new IllegalArgumentException("You are not high enough level for this piece of armor.");
+        }
+        else{
+            equipment.put(slot, armor);
         }
     }
     public int calculateDamage (Hero hero){
@@ -43,16 +45,13 @@ public abstract class Hero {
 
         for (Map.Entry<Slot, Item> entry : equipment.entrySet()) {
             Item item = entry.getValue();
-
-            // You need to make sure all items (Weapon, Armor) have a method to return their attributes
-            if (item instanceof Weapon) {
-               // totalAttributes.add(((Weapon)item).getName());
-            } else if (item instanceof Armor) {
-                totalAttributes.add(((Armor)item).getArmorAttribute());
+            if (item instanceof Armor) {
+                totalAttributes = totalAttributes.addFromArmor(((Armor)item).getArmorAttribute());
             }
         }
         return totalAttributes;
     }
+
     public String getName(){
         return this.name;
     }
@@ -70,5 +69,9 @@ public abstract class Hero {
     }
     public void addToValidWeaponType(WeaponType weaponType){
         validWeaponTypes.add(weaponType);
+    }
+
+    public List<WeaponType> getValidWeaponTypes() {
+        return validWeaponTypes;
     }
 }
