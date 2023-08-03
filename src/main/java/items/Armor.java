@@ -11,8 +11,12 @@ public class Armor extends Item {
         this.armorAttribute = armorAttribute;
     }
 
+    public HeroAttribute getArmorAttribute() {
+        return armorAttribute;
+    }
+
     @Override
     public String toString() {
-        return "[Name]:" + getName() + " [Req.Lvl]:" + getRequiredLevel() + " [Slot]:" + getSlot() + " [Type]:" + armorType + " [Attribute]:" + armorAttribute;
+        return "\n  [Name]:" + getName() + " [Req.Lvl]:" + getRequiredLevel() + " [Slot]:" + getSlot() + " [Type]:" + armorType + " [Attribute]:" + armorAttribute;
     }
 }

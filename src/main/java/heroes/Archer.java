@@ -10,8 +10,15 @@ public class Archer  extends Hero {
         setLevel(getLevel() +1 );
         this.levelAttributes = this.levelAttributes.add(LEVEL_UP_ATTRIBUTE);
     }
+
+    public static HeroAttribute getBaseAttribute() {
+        return BASE_ATTRIBUTE;
+    }
+
     @Override
     public String toString() {
         return "{Archer} "+  super.toString()  +  " [Attributes]: " + attributes(this);
     }
+
 }
+

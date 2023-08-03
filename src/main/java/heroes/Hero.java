@@ -5,10 +5,10 @@ import java.util.*;
 public abstract class Hero {
     private final String name;
     private int level = 1;
-    protected HeroAttribute levelAttributes;
+    public HeroAttribute levelAttributes;
     public Map<Slot, Item> equipment = new HashMap<Slot, Item>();
     private ArrayList<String> validWeaponTypes = new ArrayList<String>();
-    private ArrayList<String> validArmorTypes = new ArrayList<String>();
+    public ArrayList<String> validArmorTypes = new ArrayList<String>();
 
     public Hero (String name, HeroAttribute levelAttributes){
         this.name = name;
@@ -19,7 +19,7 @@ public abstract class Hero {
         if (this.level >= weapon.getRequiredLevel()) {
             equipment.put(Slot.Weapon, weapon);
         } else {
-            System.out.println("You can't equip that weapon yet! \n You need to be atleast lvl " + weapon.getRequiredLevel());
+            System.out.println("  You can't equip that weapon yet!" +  System.lineSeparator()+ "  You need to be atleast lvl " + weapon.getRequiredLevel());
         }
     }
     public void equipArmor(Slot slot, Armor armor){
@@ -35,6 +35,9 @@ public abstract class Hero {
     }
     public HeroAttribute attributes(Hero hero){
         return this.levelAttributes;
+    }
+    public HeroAttribute totalAttribute(Hero hero){
+        return this.levelAttributes; //+ equippedArmorAttribute
     }
     public String getName(){
         return this.name;

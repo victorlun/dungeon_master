@@ -12,8 +12,16 @@ public class Weapon extends Item{
         this.damage = damage;
     }
 
+    public int getDamage() {
+        return damage;
+    }
+
+    public WeaponType getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
-        return "[Name]:" +  getName() + " [Req.Lvl]:" + getRequiredLevel() + " [Slot]:" + getSlot() + " [Type]:" + type + " [Damage]:"+ damage;
+        return "\n  [Name]:" +  getName() + " [Req.Lvl]:" + getRequiredLevel() + " [Slot]:" + getSlot() + " [Type]:" + type + " [Damage]:"+ damage;
     }
 }
