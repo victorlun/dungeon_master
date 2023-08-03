@@ -1,5 +1,7 @@
 package heroes;
 
+import items.WeaponType;
+
 public class Swashbuckler extends Hero {
     private static final HeroAttribute BASE_ATTRIBUTE = new HeroAttribute(2, 6, 1);
     private static final HeroAttribute LEVEL_UP_ATTRIBUTE = new HeroAttribute(1, 4, 1);
@@ -7,6 +9,8 @@ public class Swashbuckler extends Hero {
 
     public Swashbuckler(String name) {
         super(name, BASE_ATTRIBUTE);
+        addToValidWeaponType(WeaponType.Dagger);
+        addToValidWeaponType(WeaponType.Sword);
     }
 
     @Override

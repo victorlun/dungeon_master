@@ -1,10 +1,20 @@
 package heroes;
+
+import items.WeaponType;
+
 public class Archer  extends Hero {
     private static final HeroAttribute BASE_ATTRIBUTE = new HeroAttribute(1, 7, 1);
     private static final HeroAttribute LEVEL_UP_ATTRIBUTE = new HeroAttribute(1, 5, 1);
+
+
+
     public Archer (String name){
         super(name, BASE_ATTRIBUTE);
+        addToValidWeaponType(WeaponType.Bow);
+
     }
+
+
     @Override
     public void levelUp() {
         setLevel(getLevel() +1 );
