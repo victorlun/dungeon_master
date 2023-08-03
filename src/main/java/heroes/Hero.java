@@ -8,7 +8,7 @@ public abstract class Hero {
     public HeroAttribute levelAttributes;
     public Map<Slot, Item> equipment = new HashMap<Slot, Item>();
     public List<WeaponType> validWeaponTypes = new ArrayList<>();
-    public ArrayList<String> validArmorTypes = new ArrayList<String>();
+    public List<ArmorType> validArmorTypes = new ArrayList<>();
 
     public Hero (String name, HeroAttribute levelAttributes){
         this.name = name;
@@ -70,8 +70,15 @@ public abstract class Hero {
     public void addToValidWeaponType(WeaponType weaponType){
         validWeaponTypes.add(weaponType);
     }
+    public void addToValidArmorType(ArmorType armorType){
+        validArmorTypes.add(armorType);
+    }
 
     public List<WeaponType> getValidWeaponTypes() {
         return validWeaponTypes;
+    }
+
+    public List<ArmorType> getValidArmorTypes() {
+        return validArmorTypes;
     }
 }

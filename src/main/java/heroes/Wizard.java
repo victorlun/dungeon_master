@@ -1,5 +1,6 @@
 package heroes;
 
+import items.ArmorType;
 import items.WeaponType;
 
 public class Wizard extends Hero {
@@ -10,6 +11,7 @@ public class Wizard extends Hero {
         super(name, BASE_ATTRIBUTE);
         addToValidWeaponType(WeaponType.Staff);
         addToValidWeaponType(WeaponType.Wand);
+        addToValidArmorType(ArmorType.Cloth);
     }
 
     @Override

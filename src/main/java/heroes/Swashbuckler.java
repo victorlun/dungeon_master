@@ -1,5 +1,6 @@
 package heroes;
 
+import items.ArmorType;
 import items.WeaponType;
 
 public class Swashbuckler extends Hero {
@@ -11,6 +12,9 @@ public class Swashbuckler extends Hero {
         super(name, BASE_ATTRIBUTE);
         addToValidWeaponType(WeaponType.Dagger);
         addToValidWeaponType(WeaponType.Sword);
+
+        addToValidArmorType(ArmorType.Leather);
+        addToValidArmorType(ArmorType.Mail);
     }
 
     @Override

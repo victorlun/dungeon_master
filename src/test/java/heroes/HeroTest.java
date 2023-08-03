@@ -112,6 +112,16 @@ class HeroTest {
         Wizard wizard = new Wizard("Rudbeckius");
         assertEquals(Arrays.asList(WeaponType.Staff, WeaponType.Wand), wizard.getValidWeaponTypes());
     }
+    @Test
+    public void testValidArmorTypesWizard() {
+        Wizard wizard = new Wizard("Rudbeckius");
+        assertEquals(Arrays.asList(ArmorType.Cloth), wizard.getValidArmorTypes());
+    }
+    @Test
+    public void testValidArmorTypesBarbarian() {
+        Barbarian barbarian = new Barbarian("Kungen");
+        assertEquals(Arrays.asList(ArmorType.Mail, ArmorType.Plate), barbarian.getValidArmorTypes());
+    }
 
 }
 

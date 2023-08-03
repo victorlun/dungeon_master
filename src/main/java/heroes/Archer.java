@@ -1,5 +1,6 @@
 package heroes;
 
+import items.ArmorType;
 import items.WeaponType;
 
 public class Archer  extends Hero {
@@ -11,7 +12,8 @@ public class Archer  extends Hero {
     public Archer (String name){
         super(name, BASE_ATTRIBUTE);
         addToValidWeaponType(WeaponType.Bow);
-
+        addToValidArmorType(ArmorType.Leather);
+        addToValidArmorType(ArmorType.Mail);
     }
 
 

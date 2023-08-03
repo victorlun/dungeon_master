@@ -17,7 +17,6 @@ class ItemTest {
             barbarian.equipWeapon(frostmourne);
         });
     }
-
     @Test
     public void tooHighLevelArmorTest() {
         Wizard wizard = new Wizard("Schanke");
@@ -27,7 +26,6 @@ class ItemTest {
             wizard.equipArmor(aLovelyPinkDress.getSlot(), aLovelyPinkDress);
         });
     }
-
     @Test
     public void notAValidWeaponType() {
         Wizard wizard = new Wizard("Schanke");
