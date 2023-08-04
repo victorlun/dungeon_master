@@ -12,7 +12,6 @@ public class HeroAttribute {
         this.dexterity = dexterity;
         this.intelligence = intelligence;
     }
-
     public HeroAttribute add(HeroAttribute heroAttribute) {
         return new HeroAttribute(
                 this.strength + heroAttribute.strength,
@@ -27,24 +26,19 @@ public class HeroAttribute {
                 this.intelligence += heroAttribute.getIntelligence()
         );
     }
-
     public int getStrength() {
         return strength;
     }
-
     public int getDexterity() {
         return dexterity;
     }
-
     public int getIntelligence() {
         return intelligence;
     }
-
     @Override
     public String toString() {
         return "Str:" + this.strength + " Dex:" + this.dexterity + " Int:" + this.intelligence;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,5 +50,4 @@ public class HeroAttribute {
     public int hashCode() {
         return Objects.hash(strength, dexterity, intelligence);
     }
-
 }
