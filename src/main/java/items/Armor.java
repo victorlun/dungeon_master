@@ -15,6 +15,10 @@ public class Armor extends Item {
         return armorAttribute;
     }
 
+    public ArmorType getArmorType() {
+        return armorType;
+    }
+
     @Override
     public String toString() {
         return "\n  [Name]:" + getName() + " [Req.Lvl]:" + getRequiredLevel() + " [Slot]:" + getSlot() + " [Type]:" + armorType + " [Attribute]:" + armorAttribute;
