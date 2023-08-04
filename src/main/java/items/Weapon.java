@@ -22,6 +22,6 @@ public class Weapon extends Item{
 
     @Override
     public String toString() {
-        return "\n  [Name]:" +  getName() + " [Req.Lvl]:" + getRequiredLevel() + " [Slot]:" + getSlot() + " [Type]:" + type + " [Damage]:"+ damage;
+        return "Name:" +  getName() + " Lvl:" + getRequiredLevel() + " Slot:" + getSlot() + " Type:" + type + " Damage:"+ damage;
     }
 }
