@@ -30,13 +30,14 @@ public abstract class Hero {
         if(armor.getRequiredLevel() > level){
             throw new IllegalArgumentException("You are not high enough level for this piece of armor.");
         }
+        if(!validArmorTypes.contains(armor.getArmorType())) {
+            throw new IllegalArgumentException("You can't use this armor type.");
+        }
         else{
             equipment.put(slot, armor);
         }
     }
-    public int calculateDamage (Hero hero){
-        return this.level * 5;
-    }
+    public abstract double calculateDamage (Hero hero);
     public HeroAttribute attributes(Hero hero){
         return this.levelAttributes;
     }
@@ -81,4 +82,19 @@ public abstract class Hero {
     public List<ArmorType> getValidArmorTypes() {
         return validArmorTypes;
     }
+    public  String display(Hero hero){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(getName()).append("\n");
+        sb.append("Class: ").append(hero.getType()).append("\n");
+        sb.append("Level: ").append(getLevel()).append("\n");
+        sb.append("Total Strength: ").append(totalAttribute().getStrength()).append("\n");
+        sb.append("Total Dexterity: ").append(totalAttribute().getDexterity()).append("\n");
+        sb.append("Total Intelligence: ").append(totalAttribute().getIntelligence()).append("\n");
+        sb.append("Damage: ").append(calculateDamage(this)).append("\n");
+
+        return sb.toString();
+    }
+
+    public abstract String getType();
+
 }
