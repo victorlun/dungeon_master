@@ -10,7 +10,6 @@ import java.text.DecimalFormat;
 public class Barbarian  extends Hero {
     private static final HeroAttribute BASE_ATTRIBUTE = new HeroAttribute(5, 2, 1);
     private static final HeroAttribute LEVEL_UP_ATTRIBUTE = new HeroAttribute(3, 2, 1);
-    private String type = "Barbarian";
     public Barbarian(String name){
         super(name, BASE_ATTRIBUTE);
         addToValidWeaponType(WeaponType.Sword);
@@ -51,7 +50,7 @@ public class Barbarian  extends Hero {
 
     @Override
     public String getType() {
-        return type;
+        return "Barbarian";
     }
-    }
+}
 

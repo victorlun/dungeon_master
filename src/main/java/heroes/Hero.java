@@ -6,7 +6,7 @@ public abstract class Hero {
     private final String name;
     private int level = 1;
     public HeroAttribute levelAttributes;
-    public Map<Slot, Item> equipment = new HashMap<Slot, Item>();
+    public Map<Slot, Item> equipment = new HashMap<>();
     public List<WeaponType> validWeaponTypes = new ArrayList<>();
     public List<ArmorType> validArmorTypes = new ArrayList<>();
 

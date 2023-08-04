@@ -10,7 +10,6 @@ import java.text.DecimalFormat;
 public class Wizard extends Hero {
     private static final HeroAttribute BASE_ATTRIBUTE = new HeroAttribute(1, 1, 8);
     private static final HeroAttribute LEVEL_UP_ATTRIBUTE = new HeroAttribute(1, 1, 5);
-    private String type = "Wizard";
 
     public Wizard (String name){
         super(name, BASE_ATTRIBUTE);
@@ -18,13 +17,11 @@ public class Wizard extends Hero {
         addToValidWeaponType(WeaponType.Wand);
         addToValidArmorType(ArmorType.Cloth);
     }
-
     @Override
     public void levelUp() {
         setLevel(getLevel() +1 );
         this.levelAttributes = this.levelAttributes.add(LEVEL_UP_ATTRIBUTE);
     }
-
     @Override
     public double calculateDamage(Hero hero) {
         DecimalFormat df = new DecimalFormat("#.##");
@@ -46,9 +43,8 @@ public class Wizard extends Hero {
     public String toString() {
         return "{Wizard} " + super.toString() + " Level attributes: " + attributes(this) + "\n    Equipment: " + equipment.toString();
     }
-
     @Override
     public String getType() {
-        return type;
+        return "Wizard";
     }
 }
