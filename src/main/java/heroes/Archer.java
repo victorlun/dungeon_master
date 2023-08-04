@@ -10,6 +10,7 @@ import java.text.DecimalFormat;
 public class Archer extends Hero {
     private static final HeroAttribute BASE_ATTRIBUTE = new HeroAttribute(1, 7, 1);
     private static final HeroAttribute LEVEL_UP_ATTRIBUTE = new HeroAttribute(1, 5, 1);
+    private String type = "Archer";
 
 
 
@@ -53,6 +54,8 @@ public class Archer extends Hero {
     public String toString() {
         return "{Archer} "+  super.toString()  +  " [Attributes]: " + attributes(this);
     }
-
+    public String getType() {
+        return type;
+    }
 }
 

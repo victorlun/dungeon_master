@@ -10,6 +10,7 @@ import java.text.DecimalFormat;
 public class Swashbuckler extends Hero {
     private static final HeroAttribute BASE_ATTRIBUTE = new HeroAttribute(2, 6, 1);
     private static final HeroAttribute LEVEL_UP_ATTRIBUTE = new HeroAttribute(1, 4, 1);
+    private String type = "Swashbuckler";
 
 
     public Swashbuckler(String name) {
@@ -48,5 +49,10 @@ public class Swashbuckler extends Hero {
     @Override
     public String toString() {
         return "{Swashbuckler} " + super.toString() + "  " +  " [Attributes]: " + attributes(this);
+    }
+
+    @Override
+    public String getType() {
+        return type;
     }
 }
