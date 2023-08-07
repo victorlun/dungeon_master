@@ -26,8 +26,8 @@ public class Swashbuckler extends Hero {
     public double calculateDamage(Hero hero) {
         DecimalFormat df = new DecimalFormat("#.##");
         double lvl = getLevel();
-        double dext = totalAttribute().getDexterity();
-        double damageAttributes = (dext * lvl) / 10 ;
+        double dexterity = totalAttribute().getDexterity();
+        double damageAttributes = (dexterity * lvl) / 10 ;
         Weapon weapon = (Weapon) equipment.get(Slot.Weapon);
         double damage;
 
