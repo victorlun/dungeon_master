@@ -64,7 +64,7 @@ public abstract class Hero {
     public int getLevel() {
         return level;
     }
-
+    public abstract String getType();
     public void setLevel(int level) {
         this.level = level;
     }
@@ -74,11 +74,9 @@ public abstract class Hero {
     public void addToValidArmorType(ArmorType armorType){
         validArmorTypes.add(armorType);
     }
-
     public List<WeaponType> getValidWeaponTypes() {
         return validWeaponTypes;
     }
-
     public List<ArmorType> getValidArmorTypes() {
         return validArmorTypes;
     }
@@ -91,10 +89,7 @@ public abstract class Hero {
         sb.append("Total Dexterity: ").append(totalAttribute().getDexterity()).append("\n");
         sb.append("Total Intelligence: ").append(totalAttribute().getIntelligence()).append("\n");
         sb.append("Damage: ").append(calculateDamage(this)).append("\n");
-
         return sb.toString();
     }
-
-    public abstract String getType();
 
 }
