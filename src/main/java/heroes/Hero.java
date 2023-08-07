@@ -5,10 +5,10 @@ import java.util.*;
 public abstract class Hero {
     private final String name;
     private int level = 1;
-    public HeroAttribute levelAttributes;
-    public Map<Slot, Item> equipment = new HashMap<>();
-    public List<WeaponType> validWeaponTypes = new ArrayList<>();
-    public List<ArmorType> validArmorTypes = new ArrayList<>();
+    protected HeroAttribute levelAttributes;
+    protected Map<Slot, Item> equipment = new HashMap<>();
+    private List<WeaponType> validWeaponTypes = new ArrayList<>();
+    private List<ArmorType> validArmorTypes = new ArrayList<>();
 
     public Hero (String name, HeroAttribute levelAttributes){
         this.name = name;
@@ -22,9 +22,7 @@ public abstract class Hero {
         if(!validWeaponTypes.contains(weapon.getType())){
             throw new IllegalArgumentException("You can't use this weapon type.");
         }
-        else{
             equipment.put(Slot.Weapon, weapon);
-        }
     }
     public void equipArmor(Slot slot, Armor armor){
         if(armor.getRequiredLevel() > level){
@@ -33,9 +31,7 @@ public abstract class Hero {
         if(!validArmorTypes.contains(armor.getArmorType())) {
             throw new IllegalArgumentException("You can't use this armor type.");
         }
-        else{
             equipment.put(slot, armor);
-        }
     }
     public abstract double calculateDamage (Hero hero);
     public HeroAttribute attributes(Hero hero){
@@ -80,10 +76,10 @@ public abstract class Hero {
     public List<ArmorType> getValidArmorTypes() {
         return validArmorTypes;
     }
-    public  String display(Hero hero){
+    public  String display(){
         StringBuilder sb = new StringBuilder();
         sb.append("Name: ").append(getName()).append("\n");
-        sb.append("Class: ").append(hero.getType()).append("\n");
+        sb.append("Class: ").append(getType()).append("\n");
         sb.append("Level: ").append(getLevel()).append("\n");
         sb.append("Total Strength: ").append(totalAttribute().getStrength()).append("\n");
         sb.append("Total Dexterity: ").append(totalAttribute().getDexterity()).append("\n");

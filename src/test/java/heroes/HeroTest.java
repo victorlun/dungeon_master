@@ -183,7 +183,7 @@ class HeroTest {
     public void testHeroDisplay(){
         Wizard wizard = new Wizard("Schanke");
         wizard.levelUp();
-        assertEquals("Name: Schanke\nClass: Wizard\nLevel: 2\nTotal Strength: 2\nTotal Dexterity: 2\nTotal Intelligence: 13\nDamage: 1.03\n", wizard.display(wizard));
+        assertEquals("Name: Schanke\nClass: Wizard\nLevel: 2\nTotal Strength: 2\nTotal Dexterity: 2\nTotal Intelligence: 13\nDamage: 1.03\n", wizard.display());
     }
 }
 
