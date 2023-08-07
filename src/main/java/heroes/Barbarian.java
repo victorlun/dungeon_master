@@ -44,11 +44,6 @@ public class Barbarian  extends Hero {
     }
 
     @Override
-    public String toString() {
-        return "{Barbarian} "+ super.toString() +  " [Attributes]: " + attributes(this);
-    }
-
-    @Override
     public String getType() {
         return "Barbarian";
     }

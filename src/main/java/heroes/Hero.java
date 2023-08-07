@@ -58,7 +58,7 @@ public abstract class Hero {
     }
     @Override
     public String toString() {
-        return "[Name]: " + this.name + " [Lvl]:" + this.level;
+        return "Name: " + this.name + "\nLvl: " + this.level + "\nType: " + getType();
     }
 
     public int getLevel() {

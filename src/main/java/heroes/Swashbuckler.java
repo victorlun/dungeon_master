@@ -40,10 +40,6 @@ public class Swashbuckler extends Hero {
         return Double.parseDouble(df.format(damage));
     }
     @Override
-    public String toString() {
-        return "{Swashbuckler} " + super.toString() + "  " +  " [Attributes]: " + attributes(this);
-    }
-    @Override
     public String getType() {
         return "Swashbuckler";
     }

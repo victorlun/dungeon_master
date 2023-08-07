@@ -25,8 +25,8 @@ public class Archer extends Hero {
     public double calculateDamage(Hero hero) {
         DecimalFormat df = new DecimalFormat("#.##");
         double lvl = getLevel();
-        double dext = totalAttribute().getDexterity();
-        double damageAttributes = (dext * lvl) / 10 ;
+        double dexterity = totalAttribute().getDexterity();
+        double damageAttributes = (dexterity * lvl) / 10 ;
         Weapon weapon = (Weapon) equipment.get(Slot.Weapon);
         double damage;
 
@@ -37,10 +37,6 @@ public class Archer extends Hero {
             damage = (weapon.getDamage() * (1 + (damageAttributes /100)));
         }
         return Double.parseDouble(df.format(damage));
-    }
-    @Override
-    public String toString() {
-        return "{Archer} "+  super.toString()  +  " [Attributes]: " + attributes(this);
     }
     public String getType() {
         return "Archer";

@@ -40,10 +40,6 @@ public class Wizard extends Hero {
         return Double.parseDouble(df.format(damage));
     }
     @Override
-    public String toString() {
-        return "{Wizard} " + super.toString() + " Level attributes: " + attributes(this) + "\n    Equipment: " + equipment.toString();
-    }
-    @Override
     public String getType() {
         return "Wizard";
     }
