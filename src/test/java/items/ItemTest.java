@@ -13,36 +13,26 @@ class ItemTest {
         Barbarian barbarian = new Barbarian("Gwedd");
         Weapon frostmourne = new Weapon("Frostmourne", 12, Slot.Weapon, WeaponType.Sword, 100);
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            barbarian.equipWeapon(frostmourne);
-        });
+        assertThrows(IllegalArgumentException.class, () -> barbarian.equipWeapon(frostmourne));
     }
     @Test
     public void testRequiredLvlArmor() {
         Wizard wizard = new Wizard("Schanke");
         Armor aLovelyPinkDress = new Armor("A lovely pink dress", 2, Slot.Body, ArmorType.Cloth, new HeroAttribute(0, 0, 5));
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            wizard.equipArmor(aLovelyPinkDress.getSlot(), aLovelyPinkDress);
-        });
+        assertThrows(IllegalArgumentException.class, () -> wizard.equipArmor(aLovelyPinkDress));
     }
     @Test
     public void testValidWeaponType() {
         Wizard wizard = new Wizard("Schanke");
         Weapon frostmourne = new Weapon("Frostmourne", 1, Slot.Weapon, WeaponType.Sword, 100);
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            wizard.equipWeapon(frostmourne);
-    });
+        assertThrows(IllegalArgumentException.class, () -> wizard.equipWeapon(frostmourne));
     }
     @Test
     public void testValidArmorType() {
         Wizard wizard = new Wizard("Schanke");
         Armor stormrageRaiment = new Armor("Stormrage Raiment", 1, Slot.Body, ArmorType.Leather, new HeroAttribute(7, 7, 16));
 
-       assertThrows(IllegalArgumentException.class, () -> {
-           wizard.equipArmor(stormrageRaiment.getSlot() ,stormrageRaiment);
-       });
+       assertThrows(IllegalArgumentException.class, () -> wizard.equipArmor(stormrageRaiment));
     }
     @Test
     public void testWeaponCreation_name(){

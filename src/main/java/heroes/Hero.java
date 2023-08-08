@@ -33,14 +33,14 @@ public abstract class Hero {
         }
             equipment.put(Slot.Weapon, weapon);
     }
-    public void equipArmor(Slot slot, Armor armor){
+    public void equipArmor(Armor armor){
         if(armor.getRequiredLevel() > level){
             throw new IllegalArgumentException("You are not high enough level for this piece of armor.");
         }
         if(!validArmorTypes.contains(armor.getArmorType())) {
             throw new IllegalArgumentException("You can't use this armor type.");
         }
-            equipment.put(slot, armor);
+            equipment.put(armor.getSlot(), armor);
     }
     //Attribute methods
     public HeroAttribute attributes(Hero hero){

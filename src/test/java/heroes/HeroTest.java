@@ -115,7 +115,7 @@ class HeroTest {
         Wizard wizard = new Wizard("Rudbeckius");
         wizard.levelUp();
         Armor aShattredMonocole = new Armor("A shattred Monocle", 1, Slot.Head, ArmorType.Cloth, new HeroAttribute(1,1,1));
-        wizard.equipArmor(aShattredMonocole.getSlot(), aShattredMonocole);
+        wizard.equipArmor(aShattredMonocole);
         assertEquals(new HeroAttribute(3,3,14), wizard.totalAttribute());
     }
     @Test
@@ -124,8 +124,8 @@ class HeroTest {
 
         Armor aLovelyPinkDress = new Armor("A lovely pink dress", 1, Slot.Body, ArmorType.Cloth, new HeroAttribute(0, 0, 5));
         Armor aShattredMonocole = new Armor("A shattred Monocle", 1, Slot.Head, ArmorType.Cloth, new HeroAttribute(1,1,1));
-        wizard.equipArmor(Slot.Body, aLovelyPinkDress);
-        wizard.equipArmor(Slot.Head, aShattredMonocole);
+        wizard.equipArmor(aLovelyPinkDress);
+        wizard.equipArmor(aShattredMonocole);
 
         assertEquals(new HeroAttribute(2,2,14), wizard.totalAttribute());
     }
@@ -135,8 +135,8 @@ class HeroTest {
         wizard.levelUp();
         Armor aShattredMonocole = new Armor("A shattred Monocle", 1, Slot.Head, ArmorType.Cloth, new HeroAttribute(1,1,1));
         Armor pristinePairOfGlasses = new Armor("Pristine pair of glasses", 1, Slot.Head, ArmorType.Cloth, new HeroAttribute(2,2,2));
-        wizard.equipArmor(aShattredMonocole.getSlot(), aShattredMonocole);
-        wizard.equipArmor(pristinePairOfGlasses.getSlot(), pristinePairOfGlasses);
+        wizard.equipArmor(aShattredMonocole);
+        wizard.equipArmor(pristinePairOfGlasses);
         assertEquals(new HeroAttribute(4,4,15), wizard.totalAttribute());
     }
     @Test
@@ -174,7 +174,7 @@ class HeroTest {
         Weapon sunfuryPhoenixBow = new Weapon("Sunfury Phoenix Bow", 1, Slot.Weapon, WeaponType.Bow, 45);
         Armor huntersChest = new Armor("Hunter's Chest", 1, Slot.Body, ArmorType.Leather, new HeroAttribute(0, 5, 0));
         archer.equipWeapon(sunfuryPhoenixBow);
-        archer.equipArmor(Slot.Body, huntersChest);
+        archer.equipArmor(huntersChest);
         double result= archer.calculateDamage(archer);
 
         assertEquals(45.54, result);
